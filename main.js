@@ -57,6 +57,6 @@ function writeToDocument(url) {
                 tableRows.push(`<tr>${dataRow}</tr>`);
             })  
             
-            el.innerHTML = `<table>${tableHeaders}${tableRows}</table>${pagination}`;
-        });    
-}
+            el.innerHTML = `<table>${tableHeaders}${tableRows}</table>${pagination}`.replace(/,/g, ''); // replace removes the commas from top of page
+        });                                                                                             // /, targets the commas and /g gets all the commas
+}                                                                                                  // the '' blank is the value we want to replace them with
